@@ -11,7 +11,7 @@ import {
     serverTimestamp,
 } from "firebase/firestore";
 
-import {db} from "./firebase";
+import { getFirebaseDb} from "./firebase";
 
 export type Book = {
     id: string;
@@ -22,9 +22,14 @@ export type Book = {
     description: string;
 }
 
+ const db = getFirebaseDb();
+
+
+
 export async function getBooksByGrade(
     gradeLevel: string
 ): Promise<Book[]>{
+
     const booksQuery = query(
         collection(db, "books"),
         where("gradeLevel", "==", gradeLevel)

@@ -3,7 +3,9 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, type User } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { getFirebaseAuth } from "@/lib/firebase";
+
+const auth = getFirebaseAuth();
 
 export default function ProtectedAdmin({
   children,

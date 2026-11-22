@@ -5,7 +5,7 @@ import { useState, type SubmitEventHandler } from "react";
 import PageTitle from "@/components/ui/PageTitle";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { getFirebaseAuth } from "@/lib/firebase";
 import styles from "./login.module.css";
 import RainbowLine from "@/components/ui/RainbowLine";
 
@@ -16,6 +16,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const auth = getFirebaseAuth();
 
     const handleLogin: SubmitEventHandler<HTMLFormElement> = async (e) => { 
     e.preventDefault();

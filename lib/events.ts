@@ -9,7 +9,7 @@ import {
     getDocs,
     deleteDoc
 } from "firebase/firestore";
-import { db } from "./firebase";
+import { getFirebaseDb } from "./firebase";
 
 export type NewEvent = {
     title: string;
@@ -22,6 +22,8 @@ export type NewEvent = {
 export type Event = NewEvent & {
     id: string;
 };
+
+const db = getFirebaseDb();
 
 export async function addEvent(event: NewEvent) {
     try {
