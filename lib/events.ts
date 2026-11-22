@@ -23,10 +23,10 @@ export type Event = NewEvent & {
     id: string;
 };
 
-const db = getFirebaseDb();
 
 export async function addEvent(event: NewEvent) {
     try {
+        const db = getFirebaseDb();
         const docRef = await addDoc(collection(db, "events"), {
             ...event,
             timestamp: serverTimestamp(),
@@ -42,6 +42,7 @@ export async function getCategorizedEvents(): Promise<{
     upcoming: Event[];
     past: Event[];
 }>{
+    const db = getFirebaseDb();
     const snapshot = await getDocs(collection(db, "events"));
     const events: Event[] = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -67,11 +68,13 @@ export async function updateEvent(
     eventId: string,
     eventData: Partial<Omit<Event, "id">>
 ){
+    const db = getFirebaseDb();
     const eventRef = doc(db, "events", eventId);
     await updateDoc(eventRef, eventData);
 }
 
 export async function deleteEvent(eventId: string) {
+    const db = getFirebaseDb();
     const eventRef = doc(db, "events", eventId);
     await deleteDoc(eventRef);
 }

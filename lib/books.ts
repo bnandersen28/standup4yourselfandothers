@@ -22,13 +22,13 @@ export type Book = {
     description: string;
 }
 
- const db = getFirebaseDb();
-
 
 
 export async function getBooksByGrade(
     gradeLevel: string
 ): Promise<Book[]>{
+
+    const db = getFirebaseDb();
 
     const booksQuery = query(
         collection(db, "books"),
@@ -44,6 +44,7 @@ export async function getBooksByGrade(
 
 export async function addBook(book: Omit<Book, "id">) {
     try {
+        const db = getFirebaseDb();
         const docRef = await addDoc(collection(db, "books"), {
             ...book,
             createdAt: serverTimestamp(),
@@ -58,11 +59,13 @@ export async function updateBook(
     bookId: string,
     bookData: Partial<Omit<Book, "id">>
 ){
+    const db = getFirebaseDb();
     const bookRef = doc(db, "books", bookId);
     await updateDoc(bookRef, bookData);
 }
 
 export async function deleteBook(bookId: string) {
+    const db = getFirebaseDb();
     const bookRef = doc(db, "books", bookId);
     await deleteDoc(bookRef);
 }
