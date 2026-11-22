@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged, type User } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase";
 
-const auth = getFirebaseAuth();
-
 export default function ProtectedAdmin({
   children,
 }: {
@@ -17,6 +15,10 @@ export default function ProtectedAdmin({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Initialize Firebase Auth only on the client, after mount. Calling it at
+    // module scope runs during prerender, where Firebase's heartbeat calls
+    // `new Date()` and breaks the build with Cache Components enabled.
+    const auth = getFirebaseAuth();
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (!currentUser) {
         router.replace("/login");
