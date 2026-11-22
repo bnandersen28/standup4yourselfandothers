@@ -1,0 +1,115 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+}
+
+.headerImage {
+    margin: 10px;
+}
+
+
+.stickLogo {
+    margin-top: 5px;
+    width: 12em;
+    height: 12em;
+}
+
+
+/* ---------- Desktop nav ---------- */
+.headerButtons {
+  display: flex;
+  gap: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.headerButtons a {
+  text-decoration: none;
+}
+
+/* Active page: pick whatever look you like */
+.active {
+  outline-offset: 2px;
+  transform: translateY(-2px);
+  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ---------- Hamburger (hidden on desktop) ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  margin-right: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #222;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Animate into an X */
+.barTop { transform: translateY(10.5px) rotate(45deg); }
+.barMid { opacity: 0; }
+.barBot { transform: translateY(-10.5px) rotate(-45deg); }
+
+/* ---------- Mobile breakpoint ---------- */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .stickLogo {
+    width: 7em;   /* smaller logo so the header isn't huge on phones */
+    height: 7em;
+  }
+
+  .headerButtons {
+    display: none;            /* hidden until opened */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .headerButtons.open {
+    display: flex;
+  }
+}
+
+

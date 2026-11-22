@@ -1,0 +1,78 @@
+.loginSection{
+    width: 100%;
+    background: var(--background);
+    padding: 20px;
+    min-height: 70vh;
+}
+
+.loginCard{
+    background: #fff;
+    box-shadow: 10px 10px 0 0 #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    width: 60%;
+    margin: 0 auto;
+    background: var(--green);
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 90%;
+    margin: 20px;
+}
+
+.loginForm input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    box-shadow: 6px 6px 0 0 rgb(0, 0, 0);
+    box-sizing: border-box;
+    background: #fff !important;
+}
+
+.loginForm input:focus{
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 5px var(--green);
+}
+
+.loginForm label{
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 600 !important;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.loginForm button{
+    font-size: 1.5em;
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 20px;
+    box-shadow: 6px 6px 0 0 #fff;
+    font-family: var(--font-luckiest), cursive;
+}
+
+.loginForm button:hover{
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+    background: #fff;
+    color: #000;
+    box-shadow: 6px 6px 0 0 #000;
+}
+
+.loginForm input:-webkit-autofill,
+.loginForm input:-webkit-autofill,
+.loginForm input:-webkit-autofill:hover,
+.loginForm input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+    -webkit-text-fill-color: black;
+}
+
+
+

@@ -1,0 +1,81 @@
+export type TeamMember = {
+    id: string;
+    name: string;
+    role: string;
+    image: string;
+    bio: string;
+    color: "pink" | "green"| "orange" | "blue";
+}
+
+export const teamMembers: TeamMember[] = [
+    {
+        id: "corinne",
+        name: "Corinne Garland",
+        role: "Team Leader",
+        image: "/images/corrine.jpg",
+        bio: `Corinne Garland has been a leader in the field of early childhood and early intervention in the public,
+              private nonprofit, and university sectors.
+              Starting as a preschool director and kindergarten teacher, she retired after 28 years as executive
+              director of Child Development Resources. During that time,
+              Corinne provided training on early intervention services and nonprofit management to state and local
+              agencies across the country and internationally.
+              Corinne has been especially interested in ensuring access to quality services for young children with
+              disabilities and in ensuring that all our community’s children are welcomed and valued.
+              Her work with Stand Up for Yourself and Others! is an extension of that lifelong commitment
+              which has been recognized with awards including the International Division for Early Childhood
+              of Council award for Leadership to the Field, Daily Press Citizen of the Year, and Virginia
+              Department for Children and Youth Outstanding Child Advocate.
+              Corinne has served on many nonprofit boards including the board of directors of Temple Beth
+              El where she and her husband Charles have been members for more than 50 years. They have
+              raised their family here in Williamsburg and are now grandparents of six young adults.`
+              ,
+        color: "pink"
+    }, {
+        id: "alicia",
+        name: "Alicia Phinney",
+        role: "Steering Committee Member",
+        image: "/images/aliciaphinney.jpg",
+        bio: `Alicia Phinney, Youth Services Director at Williamsburg Regional Library,
+              has worked at the library since 2017, first as Circulation Services Director and
+              transitioning to her current role in 2024. With 15 years of experience in various
+              library settings, including academic and digital librarian for the Air Combat
+              Command at Langley Air Force Base, she found her passion in public libraries.
+              Alicia supervises 11 professional librarians and is part of the library’s
+              management team. She holds a BA in English Literature from Christopher Newport
+              University (2005) and a Master’s in Library and Information Science from
+              Drexel University (2010). Alicia serves as Communications Chair for the
+              Lead Greater Williamsburg program and is a member of several professional
+              organizations, including the ALA, PLA, and VLA. She lives in Toano with her
+              husband, two daughters, and dog, Pickles.`,
+            color: "orange"
+    },{
+        id: "thayer",
+        name: "Thayer Cory",
+        role: "Steering Committee Member",
+        image: "/images/thayercory.png",
+        bio: `Thayer Cory is a long-time resident of Williamsburg and a former clerk of
+              Williamsburg Friends Meeting. She’s a retired psychologist, a published poet,
+              and an engaged Quaker. Her commitment to her four children and eight grandchildren
+              is also a driving force in her life.`,
+        color: "green"
+    }, {
+        id: "rabbi",
+        name: "Rabbi David Katz",
+        role: "Steering Committee Member",
+        image: "/images/Rabbi-David.webp",
+        bio: `Rabbi David Katz has been the rabbi of Temple Beth El of Williamsburg
+              since 2010. He grew up in New York City, and was ordained by the
+              Reconstructionist Rabbinical College in 2009. In addition to serving
+              as the spiritual leader of Williamsburg’s only synagogue, he is one
+              of the founders and leaders of Historic Area Religions Together (HART),
+              the Historic Triangle’s multi faith organization of different religious
+              communities and leaders. He is a member of the Community Relations
+              Council of the United Jewish Communities of the Virginia Peninsula.
+              He has also been a part of different working groups and committees
+              for the Williamsburg/James City County School Division. In November 2020,
+              the Greater Williamsburg Business Council named him one of the 15 Under
+              50 up-and-coming business and civic leaders in Greater Williamsburg,
+              in recognition of his impact on the community at large.`,
+        color: "blue"
+    }
+];

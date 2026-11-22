@@ -1,0 +1,12 @@
+.rainbowLine{
+    height: 5px;
+    background: linear-gradient(to right, 
+    var(--red),
+    var(--orange),
+    var(--yellow),
+    var(--green),
+    var(--blue),
+    var(--purple),
+    var(--pink));
+    background-color: transparent;
+}

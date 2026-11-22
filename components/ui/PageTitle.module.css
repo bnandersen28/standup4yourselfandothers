@@ -1,0 +1,46 @@
+.titleZone {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    align-items: center;
+}
+
+.titleStack {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.wordOne, .wordTwo {
+    font-family: "Luckiest Guy";
+    font-weight: 800;
+    line-height: 1.05;
+    -webkit-text-stroke: 2.5px #1a1a1a;
+    paint-order: stroke fill;
+    display: inline-block;
+}
+
+.wordOne {
+    color: var(--red);
+    transform: rotate(-2deg);
+    font-size: 30px;
+    letter-spacing: .1em;
+}
+
+.wordTwo {
+    color: var(--purple);
+    transform: rotate(1.5deg);
+    font-size: 50px;
+    letter-spacing: .1em;
+}
+
+.subhead {
+    font-family: 'Baloo 2', cursive;
+    font-size: 21px;
+    color: #000;
+    margin-top: 14px;
+}
