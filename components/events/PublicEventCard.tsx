@@ -6,31 +6,32 @@ type Props = {
   event: Event;
 };
 
-function formatEventDate(dateString: string) {
-  const [year, month, day] = dateString.split("-").map(Number);
+const MONTHS = [
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
+];
 
-  return new Date(year, month - 1, day);
+function formatEventDate(dateString: string) {
+    const [year, month, day] = dateString.split("-").map(Number);
+
+    const monthName = MONTHS[month - 1];
+
+    return {
+        month: monthName.slice(0, 3).toUpperCase(),
+        day,
+        fullDate: `${monthName} ${day}, ${year}`,
+    };
 }
 
 export default function PublicEventCard({ event }: Props) {
-  const date = formatEventDate(event.date);
-
-  const month = date
-    .toLocaleDateString("en-US", { month: "short" })
-    .toUpperCase();
-
-  const fullDate = date.toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
+  const { month, day, fullDate } = formatEventDate(event.date);
 
   return (
     <article className={styles.card}>
       <div className={styles.datebox}>
         <span className={styles.mon}>{month}</span>
-        <span className={styles.day}>{date.getDate()}</span>
+        <span className={styles.day}>{day}</span>
       </div>
 
       <h3>{event.title}</h3>
