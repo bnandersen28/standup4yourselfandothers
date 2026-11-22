@@ -16,7 +16,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const auth = getFirebaseAuth();
+
 
     const handleLogin: SubmitEventHandler<HTMLFormElement> = async (e) => { 
     e.preventDefault();
@@ -24,6 +24,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
+      const auth = getFirebaseAuth();
       await signInWithEmailAndPassword(auth, email, password);
 
       router.replace("/admin");
